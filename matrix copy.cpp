@@ -4,28 +4,36 @@ using namespace std;
 
 int main()
 {
-    const int CITIES = 3;
-    const int DAYS = 4;
-    int temp[CITIES][DAYS];
+    const int ROWS = 2;
+    const int COLS = 3;
 
-    cout << "Enter temperatures for 3 cities over 4 days:\n";
+    int table_A[ROWS][COLS];
+    int table_B[ROWS][COLS];
 
-    for (int row = 0; row < CITIES; row++)
+    cout << "Enter values for matrix A (2x3):\n";
+    for (int row = 0; row < ROWS; row++)
     {
-        cout << "City " << (row + 1) << ":\n";
-        for (int col = 0; col < DAYS; col++)
+        for (int col = 0; col < COLS; col++)
         {
-            cout << "  Day " << (col + 1) << ": ";
-            cin >> temp[row][col];
+            cout << "A[" << row << "][" << col << "]: ";
+            cin >> table_A[row][col];
         }
     }
 
-    cout << "\nTemperature Table:\n";
-    for (int row = 0; row < CITIES; row++)
+    for (int row = 0; row < ROWS; row++)
     {
-        for (int col = 0; col < DAYS; col++)
+        for (int col = 0; col < COLS; col++)
         {
-            cout << temp[row][col] << "\t";
+            table_B[row][col] = table_A[row][col];
+        }
+    }
+
+    cout << "\nMatrix B (copy of A):\n";
+    for (int row = 0; row < ROWS; row++)
+    {
+        for (int col = 0; col < COLS; col++)
+        {
+            cout << table_B[row][col] << "\t";
         }
         cout << endl;
     }
